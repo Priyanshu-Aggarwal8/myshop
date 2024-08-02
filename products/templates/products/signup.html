@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{%block description%}"This is my signup page"{%endblock%}
+{% block robots %}"index, follow"{% endblock%}
+{% block css%}{%static "products/signup.css" %}{%endblock%}
+{% block title%}Signup{%endblock%}
+{% block body %}
+    {% include "includes/nav.html"%}
+    <div class="container" >
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        <div class="square">
+        <div class="square black">
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    <form>
+        <label for="name">Full Name: </label><br>
+        <input type="text" id="name" required><br><br>
+        <label for="email">E-Mail: </label><br>
+        <input type="email" id="email" required><br><br>
+        <label for="phone">Phone number:  </label><br>
+        <input type="tel" id="phone" required><br><br>
+        <label for="gender">Gender: </label>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female<br><br>
+        <label for="date">Date of Birth: </label><br>
+        <input type="date" id="date" required><br><br>
+        <label for="pass">Password: </label><br>
+        <input type="password" id="pass" required><br><br>
+        <label for="image">Add profile image:  </label><br>
+        <input type="file" id="image"><br><br>
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to the terms and conditions for use</label><br><br>
+        <button type="submit" onclick="signUp()">Signup</button>
+    </form>
+{%endblock%}

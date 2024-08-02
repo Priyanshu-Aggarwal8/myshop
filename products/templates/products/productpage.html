@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{%block description%}{{product.description}}{%endblock%}
+{% block robots %}"index, follow"{% endblock%}
+{% block css%}{%static "products/product.css" %}{%endblock%}
+{% block title%}{{product.title}}{%endblock%}
+{% block body %}
+    {% include "includes/nav.html"%}
+    <div id="product-main-con">
+        <main>
+            <img src = "{{product.image.url}}">
+            <div>
+                <h1>{{product.title}}</h1>
+                <p>{{product.brand.title}}</p>
+                <p>{{product.description}}</p>
+                <button>Add to Cart</button>
+            </div>
+        </main>
+        <section id="feedback">
+            <h3>Customer's Feedbacks:</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <label for="username">Name</label><br>
+                <input id="username" Name="username" type="text"><br>
+                <button type="submit">submit</button>
+            </form>
+        </section>
+    </div>
+{%endblock%}

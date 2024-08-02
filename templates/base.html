@@ -1,0 +1,28 @@
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}{%endblock%}">
+    <meta name="robots" content="{% block robots %}{% endblock%}">
+    <meta name="keywords" content="{% block keywords %}{% endblock%}">
+    <link rel = "stylesheet" type="text/css" href = "{% block css %}{% endblock %}">
+    <link rel="icon" type="image/x-icon" href="{% static "img/favicon.ico" %}">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="{% static 'js/firebaseConfig.js' %}"></script>
+    <script src="{% static 'js/auth.js' %}"></script>
+</head>
+<body>
+    <!--
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="signIn()">Sign In</button>
+    <button onclick="signOut()">Sign Out</button>
+    -->
+    {% block body %}{% endblock%}
+</body>
+</html>
