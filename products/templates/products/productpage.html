@@ -18,10 +18,24 @@
         </main>
         <section id="feedback">
             <h3>Customer's Feedbacks:</h3>
+            {%if messages %}
+            {%for message in messages%}
+            <p>{{message}}</p>
+            {%endfor%}
+            {%endif%}
             <form method="POST">
                 {% csrf_token %}
-                <label for="username">Name</label><br>
-                <input id="username" Name="username" type="text"><br>
+                {{form.name.label}}<br>
+                {%for error in form.name.errors%}
+                <h3 style = "color:red">{{error}}</h3>
+                {%endfor%}
+                {{form.name}}<br>
+
+                {{form.email.label}}<br>
+                {%for error in form.email.errors%}
+                <h3 style = "color:red">{{error}}</h3>
+                {%endfor%}
+                {{form.email}}<br>
                 <button type="submit">submit</button>
             </form>
         </section>
