@@ -125,6 +125,7 @@ form button:hover{
     top: 50%;
     left: 50%;
     margin: -150px 0 0 -150px;
+    z-index: -1;
 }
   
 .square{
@@ -135,10 +136,15 @@ form button:hover{
     top: 50%;
     left: 50%;
     margin: -74 0 0 74;
+    z-index: -1;
 }
   
 .black{ 
     background: black;  
     animation: rotate 30s infinite linear; 
 }
-  
+
+@keyframes rotate{
+    0%{ transform: rotate(0deg); }
+      100%{ transform: rotate(360deg); }	
+  }

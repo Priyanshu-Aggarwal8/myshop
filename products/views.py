@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Product
+from .models import Product, Feedback
 from .forms import FeedbackForm
 from django.contrib import messages
 from django.shortcuts import render
@@ -51,16 +51,27 @@ def cat_product(request, product):
 def product_page(request, product_brand, product_slug):
     product = Product.objects.get(slug = product_slug)
     form = FeedbackForm()
+    reviews = Feedback.objects.filter(product = product)
     if request.method == "GET":
         return render(request, "products/productpage.html", {
             "product": product,
-            "form": form
+            "form": form,
+            "reviews" : reviews,
         })
     else:
-        if(form.is_valid):
+        form = FeedbackForm(request.POST)
+        if(form.is_valid()):
+            feedback = Feedback(
+                name = form.cleaned_data["name"],
+                email = form.cleaned_data["email"],
+                description = form.cleaned_data["description"],
+                product = product
+            )
+            feedback.save()
             messages.success(request, "Your feedback was submitted successfully")
         
         return render(request, "products/productpage.html", {
             "product": product,
-            "form": form
+            "form": form,
+            "reviews" : reviews,
         })

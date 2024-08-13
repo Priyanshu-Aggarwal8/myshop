@@ -2,10 +2,36 @@
 {% load static %}
 {%block description%}"This is my signup page"{%endblock%}
 {% block robots %}"index, follow"{% endblock%}
-{% block css%}{%static "products/homepage.css" %}{%endblock%}
+{% block css%}{%static "products/cart.css" %}{%endblock%}
 {% block title%}Cart{%endblock%}
 {% block body %}
     {% include "includes/nav.html"%}
+    
+    <div class="container1">
+        <h1>Shopping Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Product 1</td>
+                    <td>$10.00</td>
+                    <td>2</td>
+                    <td>$20.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">
+            <strong>Total: $35.00</strong>
+        </div>
+        <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+    </div>
     <div class="container" >
         <div class="square black">
         <div class="square">
@@ -65,5 +91,5 @@
         </div>
         </div>
         </div>
-        </div>
+
 {%endblock%}

@@ -42,3 +42,10 @@ class Product(models.Model):
         self.slug = self.id 
         super().save(*args, **kwargs)
 
+class Feedback(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    description = models.CharField(max_length=200)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.product}"

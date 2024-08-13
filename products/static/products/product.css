@@ -59,3 +59,33 @@ nav a{
     border-radius: 20px;
     margin-top: 70px;
 }
+
+/* ---------------- feedback form ---------------- */
+#feedback input, #feedback textarea{
+    width: 97%;
+    display: block;
+    font-size: 18px;
+    padding: 7px 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 15px;
+}
+ 
+#feedback label{
+    font-weight: 300;
+    display: block;
+    margin-bottom: 5px;
+}
+ 
+#feedback button{
+    border: none;
+    border-radius: 15px;
+    background-color: #5762D5;
+    color: white;
+    font-size: 18px;
+    padding: 10px 30px;
+    width: 20%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+#feedback button:hover{ background-color: #3d47b0;}

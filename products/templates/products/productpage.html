@@ -36,8 +36,22 @@
                 <h3 style = "color:red">{{error}}</h3>
                 {%endfor%}
                 {{form.email}}<br>
+
+                {{form.description.label}}<br>
+                {%for error in form.description.errors%}
+                <h3 style = "color:red">{{error}}</h3>
+                {%endfor%}
+                {{form.description}}<br>
+
                 <button type="submit">submit</button>
             </form>
+        </section>
+        <section>
+            {%for review in reviews%}
+                <h2>{{ review.name }}</h2>
+                <h4>{{ review.description }}</h4>
+                <p>---------------------------------------------------------------------------------------</p>
+            {%endfor%}
         </section>
     </div>
 {%endblock%}
