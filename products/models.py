@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Address(models.Model):
     street = models.CharField(max_length = 30)
-    zipcode = models.SmallIntegerField(max_length= 10)
+    zipcode = models.SmallIntegerField()
     city = models.CharField(max_length=30)
     country = models.CharField(max_length=30)
 

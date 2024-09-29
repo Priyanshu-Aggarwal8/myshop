@@ -3,11 +3,29 @@ from django.http import HttpResponse
 from .models import Product, Feedback
 from .forms import FeedbackForm
 from django.contrib import messages
-from django.shortcuts import render
 from django.http import JsonResponse
 import firebase_admin
 from firebase_admin import auth
-# Create your views here.
+import pyrebase
+
+config = {
+  apiKey: "AIzaSyA4XX3dGZv22X3tvGqvnKKJPdGNiqUkIL0",
+  authDomain: "myshop-f2954.firebaseapp.com",
+  projectId: "myshop-f2954",
+  storageBucket: "myshop-f2954.appspot.com",
+  messagingSenderId: "454542907350",
+  appId: "1:454542907350:web:bc96f45b0e34a1c1cb3677",
+  measurementId: "G-J6CJ4C6Y5D"
+}
+firebase=pyrebase.initialize_app(config)
+authe = firebase.auth()
+database=firebase.database()
+
+def home(request):
+	day = database.child('Data').child('Day').get().val()
+	id = database.child('Data').child('Id').get().val()
+	projectname = database.child('Data').child('Projectname').get().val()
+	return render(request,"Home.html",{"day":day,"id":id,"projectname":projectname })
 
 def create_user(request):
     email = request.POST.get('email')

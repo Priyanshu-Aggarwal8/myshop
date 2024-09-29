@@ -1,0 +1,150 @@
+body{ 
+    background-color:rgba(250, 235, 215, 0.658);
+    width: auto;
+    margin: auto;
+}
+.darkmode{
+    background-color: rgb(33, 33, 33);
+    color: whitesmoke;
+}
+#mode:hover{
+    cursor: pointer;
+}
+header{ 
+    display:flex;
+    position:relative;
+    justify-content: space-between;
+    color:black;
+    background-color:white;
+    box-shadow: 10px 10px 35px #00000041;
+}
+nav{
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    transition-duration: 0.2s;
+}
+nav a{
+    text-decoration: none;
+}
+#logo{
+    height: 100px;
+    width: 250px;
+}
+form{
+    font-size: small;
+    width: 220px;
+    background-color:#EEEFF1;
+    border-radius: 15px;
+    padding:20px;
+    margin:50px auto;
+}
+input{
+    outline-color: #5762D5;
+    font-size:medium;
+    border-radius: 10px;
+    width: auto;
+    margin: 0 0 10px 0;
+    padding: auto;
+    border:none;
+}
+button{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px;
+    border-style:hidden;
+    margin: auto;
+    background-color: #5762D5;
+    width:100%;
+    border-radius: 15px;
+}
+form button:hover{
+    transition-duration: 0.3s;
+    background-color:black;
+    cursor: pointer;
+}
+/*Calculator CSS starts from here*/
+#calc{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 300px;
+    margin: 100px auto;
+    background-color: #212141;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 20px;
+}
+#calc h2{
+    background-color: #EEEFF1;
+    color: #212141;
+    margin: 0;
+    padding: 13px 20px 0px 20px;
+    height: 53px;
+    font-size: 35px;
+    border-radius: 10px;
+    grid-column: 1/5;
+    grid-row: 1/2;
+    text-align: right;
+}
+#calc h4{
+    background-color: #36355f;
+    color: #EEEFF1;
+    margin: 0;
+    padding-top: 15px;
+    height: 35px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 10px;
+    transition-duration: 0.3s;
+}
+#calc h4:hover{
+    background-color: #5762D5;
+    box-shadow: 0px 0px 0px #000;
+}
+.operator{
+    background-color: orange !important; 
+    color: black !important;
+    transition-duration: 0.3s !important;
+}
+.operator:hover{
+    background-color: whitesmoke !important;
+    box-shadow: 0px 0px 0px #000 !important;
+}
+#clrsc:hover{
+    background-color: #5762D5 !important;
+    color: white !important;
+    box-shadow: 0px 0px 0px #000 !important;
+}
+
+.container{
+    opacity: 10%;
+    height: 50%;
+    width: 25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    z-index: -1;
+}
+  
+.square{
+    height: 80%;
+    width: 80%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -74 0 0 74;
+    z-index: -1;
+}
+  
+.black{ 
+    background: black;  
+    animation: rotate 30s infinite linear; 
+}
+
+@keyframes rotate{
+    0%{ transform: rotate(0deg); }
+      100%{ transform: rotate(360deg); }	
+  }
