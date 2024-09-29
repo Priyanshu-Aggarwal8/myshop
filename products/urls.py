@@ -6,7 +6,6 @@ from django.contrib import admin
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
-	path('', views.home),
     path('', views.index, name="home"),
     path('products/<product>', views.cat_product, name="productcat"),
     path('login', views.login, name="login"),
