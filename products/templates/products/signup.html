@@ -1,29 +1,78 @@
 {% extends "base.html" %}
 {% load static %}
-{%block description%}"This is my signup page"{%endblock%}
-{% block robots %}"index, follow"{% endblock%}
-{% block css%}{%static "products/signup.css" %}{%endblock%}
-{% block title%}Signup{%endblock%}
+{%block description%}This is my description{%endblock%}
+{% block robots %}index, follow{% endblock%}
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+{% block title%}REGISTER{%endblock%}
 {% block body %}
     {% include "includes/nav.html"%}
-    <form>
-        <label for="name">Full Name: </label><br>
-        <input type="text" id="name" required><br><br>
-        <label for="email">E-Mail: </label><br>
-        <input type="email" id="email" required><br><br>
-        <label for="phone">Phone number:  </label><br>
-        <input type="tel" id="phone" required><br><br>
-        <label for="gender">Gender: </label>
-        <input type="radio" name="gender" value="male"> Male
-        <input type="radio" name="gender" value="female"> Female<br><br>
-        <label for="date">Date of Birth: </label><br>
-        <input type="date" id="date" required><br><br>
-        <label for="pass">Password: </label><br>
-        <input type="password" id="pass" required><br><br>
-        <label for="image">Add profile image:  </label><br>
-        <input type="file" id="image"><br><br>
-        <input type="checkbox" id="terms">
-        <label for="terms">I agree to the terms and conditions for use</label><br><br>
-        <button type="submit">Signup</button>
-    </form>
+    <div class="container mt-5" style="opacity:1;text-align:center">
+        <!-- Registration form -->
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+            {% csrf_token %}  <!-- CSRF token for security -->
+
+            <!-- Registration form heading -->
+            <h1 style="text-align: center;"><span style="color: royalblue;">Register on MyShop</span></h1>
+            <h3>Register</h3>
+            <hr>
+
+            <!-- Display error/success messages -->
+            {% if messages %}
+            <div class="alert alert-primary" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- First Name input field -->
+            <div class="form-group">
+                <label for="exampleInputEmail1">First name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter First name" name="first_name" required>
+            </div>
+
+            <!-- Last Name input field -->
+            <div class="form-group">
+                <label for="exampleInputEmail1">Last name</label>
+                <input type="text" name="last_name" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter Last name" required>
+            </div>
+
+            <!-- Username input field -->
+            <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" name="username" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email" required>
+            </div>
+
+            <!-- Password input field -->
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1"
+                    placeholder="Password" required>
+            </div>
+
+            <!-- Link to login page for users who already have an account -->
+            <p>Already have an account <a href="{% url "login" %}">Login</a> </p>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary" request="post">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p style="font-size: large;">To know more about our brand, follow us on our social media handles:</p>
+        <div>
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"/><stop offset=".328" stop-color="#ff543f"/><stop offset=".348" stop-color="#fc5245"/><stop offset=".504" stop-color="#e64771"/><stop offset=".643" stop-color="#d53e91"/><stop offset=".761" stop-color="#cc39a4"/><stop offset=".841" stop-color="#c837ab"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"/><stop offset=".999" stop-color="#4168c9" stop-opacity="0"/></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/></svg>
+        <a style="text-decoration: none;" href="">Instagram</a>
+        </div>
+        <div>
+        <?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"/></svg>
+        <a style="text-decoration: none;" href="">Facebook</a>
+        </div>
+        <div>
+        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"/><path fill="#FFF" d="M20 31L20 17 32 24z"/></svg>
+        <a style="text-decoration: none;" href="">Youtube</a>
+        </div>
+    </footer>
 {%endblock%}

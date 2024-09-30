@@ -13,7 +13,7 @@
                 <h1>{{product.title}}</h1>
                 <p>{{product.brand.title}}</p>
                 <p>{{product.description}}</p>
-                <button>Add to Cart</button>
+                <button><a href="{% url 'add_to_cart' product.slug %}" id = "cartAdd">Add to Cart</a></button>
             </div>
         </main>
         <section id="feedback">

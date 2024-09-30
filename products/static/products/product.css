@@ -59,7 +59,9 @@ nav a{
     border-radius: 20px;
     margin-top: 70px;
 }
-
+#cartAdd{
+    text-decoration: none !important;
+}
 /* ---------------- feedback form ---------------- */
 #feedback input, #feedback textarea{
     width: 97%;

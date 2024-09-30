@@ -73,3 +73,31 @@ th {
     border-radius: 5px;
     font-size: 1.2em;
 }
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+    justify-content: space-between; /* Space items evenly along the main axis */
+    list-style: none; /* Remove list styles */
+    padding: 0;
+}
+
+.product-item {
+    
+    flex: 1; /* Grow to fill available space evenly */
+        /* Limit item width to avoid overcrowding */
+    margin: 10px; /* Add spacing between items */
+    border: 1px solid #ccc; /* Add a border for visual separation */
+    padding: 10px;
+    text-align: center;
+}
+
+.buy-now-button {
+    display: block;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

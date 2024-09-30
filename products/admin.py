@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Brand, Address, Category, Feedback
+from .models import Product, Brand, Address, Category, Feedback, CartItem
 # Register your models here.
 class productAdmin(admin.ModelAdmin):
     readonly_fields = ("slug",)
@@ -12,3 +12,4 @@ admin.site.register(Product, productAdmin)
 admin.site.register(Brand)
 admin.site.register(Address)
 admin.site.register(Feedback)
+admin.site.register(CartItem)
